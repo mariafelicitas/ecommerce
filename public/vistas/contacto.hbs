@@ -1,0 +1,38 @@
+{{!-- Motor de plantillas. 
+Pseudo HTML que interactúa de manera eficiente con lo inyectado en alta.js 
+Inyectamos la tabla como en HTML--}}
+{{#if mensajes.length}}
+    <table>
+        {{!-- <tr>
+            <th class="mediaQuery">ID</th> --}}
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Mensaje</th>
+            <th class="mediaQuery">Información</th>
+            <th>Acción</th>
+        </tr>
+
+        {{#each mensajes}}
+        <tr>
+            {{!-- <td class="mediaQuery">{{id}}</td> --}}
+            <td>{{nombre}}</td>
+            <td>{{email}}</td>
+            <td>{{mensaje}}</td>
+            
+            {{#if informacion}}
+                <td class="mediaQuery">Si</td>
+            {{else}}
+                <td class="mediaQuery">No</td>
+            {{/if}}
+            
+            <td>
+                <button class="button" onclick="mensajeController.actualizarMensaje({{id}})">Actualizar</button>
+                <button class="button" onclick="mensajeController.borrarMensaje({{id}})">Borrar</button>
+            </td>
+        </tr>
+        {{/each}}
+
+    </table>
+{{else}}
+    <h3>No hay mensajes nuevos</h3>
+{{/if}}

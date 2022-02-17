@@ -1,0 +1,974 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+body,
+.section-cards__header,
+.cards-container {
+  font-family: "Roboto", sans-serif;
+}
+
+.card {
+  cursor: pointer;
+  width: 18em;
+  height: 23em;
+  outline: none;
+  overflow: hidden;
+  flex-grow: 1;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2), 0 0 3px rgba(0, 0, 0, 0.4);
+  transition: all 0.2s;
+  text-decoration: none;
+  border-radius: 1em;
+}
+.card__article {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 1.5s ease;
+  background-color: #E4CBF5;
+}
+.card__article:hover {
+  transform: rotateY(180deg);
+}
+.card__image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  border-radius: 1em;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.card__content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  background-color: transparent;
+  color: black;
+  font-weight: bolder;
+  text-align: center;
+  transform: rotateY(180deg);
+  margin-top: 0.8em;
+  text-align: center;
+  line-height: 1.5em;
+  justify-content: justify;
+  padding: 1em;
+}
+.card__content::before {
+  content: "🦋🦋🦋";
+}
+.card-container {
+  height: 12em;
+}
+.card__heading {
+  padding: 0.2em;
+  font-size: 2em;
+  color: black;
+  font-variant: small-caps;
+}
+.card__description {
+  font-size: 0.8em;
+}
+
+.active {
+  font-weight: bold;
+}
+
+.form__button {
+  background-color: #E4CBF5;
+  border-radius: 1em;
+  align-items: center;
+  color: black;
+  padding: 1em;
+  text-decoration: none;
+  letter-spacing: 0.3em;
+}
+
+.form__submit {
+  padding: 1em;
+  align-self: center;
+  border-radius: 0.9em;
+  margin: 1em;
+  margin-top: 1.2em;
+  letter-spacing: 0.9em;
+}
+
+@media (max-width: 769px) {
+  .button {
+    display: flex;
+    margin-left: 18em;
+  }
+}
+@media (max-width: 426px) and (min-width: 320px) {
+  .button {
+    display: none;
+  }
+}
+footer {
+  color: white;
+  background-color: #85008F;
+  padding: 1em;
+  text-align: center;
+  font-size: 0.8em;
+  width: 100%;
+  letter-spacing: 0.3em;
+}
+
+.footer__link {
+  text-decoration: none;
+  color: white;
+}
+.footer__link:hover, .footer__link:focus {
+  cursor: pointer;
+}
+.footer__link:visited {
+  color: pink;
+}
+
+.main {
+  display: flex;
+  justify-content: space-around;
+  border-top: solid black;
+  border-bottom: solid black;
+}
+.main__screen {
+  flex-direction: row;
+  justify-content: center;
+  width: 40%;
+}
+
+.main-header {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  position: -webkit-sticky;
+  position: sticky;
+  border-bottom: dotted black;
+  border-top: dotted black;
+  background-image: url(../img/web/fondo-animado.gif);
+}
+
+#menu {
+  display: none;
+}
+
+#menu:checked + .nav-bar {
+  display: block;
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+}
+.nav-bar__nav-list {
+  display: flex;
+  margin-left: 2em;
+  list-style-type: none;
+}
+.nav-bar__nav-item {
+  text-align: center;
+  justify-content: center;
+  margin: 1em;
+}
+.nav-bar__nav-item:hover {
+  text-decoration: underline;
+  transform: scale(1.1);
+}
+.nav-bar__nav-link {
+  display: block;
+  background-color: #E4CBF5;
+  border-radius: 0.9em;
+  margin: 1em;
+  color: black;
+  padding: 1em;
+  border-bottom: solid black;
+  border-right: solid black;
+  text-decoration: none;
+  letter-spacing: 0.3em;
+}
+.nav-bar__nav-list {
+  flex-direction: row;
+  justify-content: center;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+}
+.search-bar__logo-container {
+  display: flex;
+}
+.search-bar__form-container {
+  flex-basis: 100%;
+  margin-left: 3em;
+}
+.search-bar__form-label {
+  height: 50%;
+}
+.search-bar__form-search {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  font-size: 0.9em;
+  letter-spacing: 0.3em;
+  border-radius: 5px;
+  padding: 0.5em;
+}
+.search-bar__form-search:hover {
+  cursor: text;
+}
+.search-bar__form-submit {
+  margin: 0.1em;
+  padding: 1em;
+  border: none;
+  background-color: transparent;
+}
+.search-bar__form-submit {
+  cursor: help;
+}
+.search-bar__form-label, .search-bar__form-search, .search-bar__form-submit {
+  align-self: center;
+  text-align: left;
+}
+.search-bar__carrito-container {
+  margin-right: 2em;
+  margin-left: 1em;
+  cursor: url("../../img/web/cursor.png"), auto;
+}
+.search-bar__carrito-container:hover {
+  transform: scale(1.2);
+}
+
+.menu-toggle {
+  display: none;
+  background-color: transparent;
+  flex: 0 0 3em;
+  position: relative;
+  cursor: pointer;
+}
+
+.menu-toggle__label {
+  display: block;
+  background-color: #000;
+  height: 100%;
+}
+
+.menu-toggle__top-bread,
+.menu-toggle__meat,
+.menu-toggle__bottom-bread {
+  display: block;
+  background-color: rebeccapurple;
+  height: 0.2em;
+  position: absolute;
+  left: 0.3em;
+  right: 0.3em;
+}
+
+.menu-toggle__top-bread {
+  top: 0.8em;
+}
+
+.menu-toggle__meat {
+  top: 50%;
+  margin-top: -0.1em;
+}
+
+.menu-toggle__bottom-bread {
+  bottom: 0.8em;
+}
+
+@media (max-width: 2560px) {
+  .main {
+    background-size: contain;
+  }
+}
+@media (max-width: 1024px) {
+  .search-bar__form-container {
+    display: none;
+  }
+
+  .search-bar__logo-container {
+    display: none;
+  }
+
+  .nav-bar {
+    align-self: center;
+  }
+}
+@media (max-width: 768px) and (min-width: 375px) {
+  .search-bar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 1em;
+  }
+
+  .search-bar__form-container {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-bar {
+    display: none;
+  }
+
+  .nav-bar__nav-list {
+    display: block;
+  }
+}
+@media (max-width: 321px) {
+  .search-bar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .search-bar__form-container {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-bar {
+    display: none;
+  }
+
+  .nav-bar__nav-list {
+    display: block;
+  }
+}
+.section-alta {
+  padding: 2em;
+  background-color: #e1c3f5;
+  border-radius: 5px;
+}
+.section-alta__header {
+  color: black;
+  text-align: center;
+  letter-spacing: 1em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.section-alta .section-alta__header::before {
+  content: "🦋🦋🦋";
+}
+.section-alta .input-group {
+  margin: 0.5em 0 1.5em;
+  color: black;
+  text-align: center;
+  letter-spacing: 0.6em;
+  font-weight: 600;
+}
+.section-alta .input-group input:not(input[type=checkbox]) {
+  padding: 0.5em 1em;
+  display: block;
+  width: 100%;
+  margin-top: 0.5em;
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+  text-align: center;
+  border-radius: 5px;
+}
+.section-alta .input-group input:not(input[type=checkbox]):focus {
+  border-left: 0.5em solid black;
+  border-right: 0.5em solid black;
+  padding-left: 0.5em;
+  background-color: white;
+}
+.section-alta .input-group--error label,
+.section-alta .input-group--error input:not(input[type=checkbox]) {
+  color: black;
+}
+.section-alta .input-group--error label:focus,
+.section-alta .input-group--error input:not(input[type=checkbox]):focus {
+  border-color: black;
+}
+.section-alta .input-group--error input:not(input[type=checkbox])::-moz-selection {
+  background-color: #E4CBF5;
+}
+.section-alta .input-group--error input:not(input[type=checkbox])::selection {
+  background-color: #E4CBF5;
+}
+.section-alta .input-group--error .error-detail {
+  background-color: #85008F;
+  color: white;
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+  border-bottom-left-radius: 0.2em;
+  border-bottom-right-radius: 0.2em;
+}
+@media (max-width: 769px) {
+  .section-alta .input-group--error .error-detail {
+    letter-spacing: normal;
+  }
+}
+.section-alta .input-group--error .error-detail:empty {
+  padding: 0;
+}
+.section-alta .button {
+  border-bottom: solid black;
+  border-right: solid black;
+  background-color: #85008F;
+  color: #E4CBF5;
+  border-radius: 1em;
+  text-align: center;
+  padding: 0.5em;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  width: 100%;
+}
+.section-alta .button:hover {
+  cursor: pointer;
+}
+@media (max-width: 769px) {
+  .section-alta .button {
+    display: none;
+  }
+  .section-alta #foto {
+    display: inline-flex;
+    flex-direction: column;
+  }
+}
+@media (max-width: 376px) {
+  .section-alta #foto {
+    color: transparent;
+  }
+  .section-alta #progress-bar {
+    display: none;
+  }
+}
+.section-alta #disable {
+  color: black;
+  border-radius: 1em;
+  text-align: center;
+  padding: 0.5em;
+}
+.section-alta .form-subtitle,
+.section-alta .listado-productos {
+  text-align: center;
+  padding: 1em;
+}
+.section-alta .form-subtitle {
+  letter-spacing: 0.2em;
+}
+@media (min-width: 426px) {
+  .section-alta {
+    width: 90%;
+    margin: 1em auto;
+  }
+}
+@media (min-width: 768px) {
+  .section-alta {
+    padding: 2em;
+    width: 90%;
+    margin: 2em auto;
+  }
+}
+@media (max-width: 1024px) {
+  .section-alta .mediaQuery {
+    display: none;
+  }
+}
+@media (max-width: 426px) {
+  .section-alta table {
+    display: none;
+  }
+}
+@media (max-width: 1024px) {
+  .section-alta .mediaQuery {
+    display: none;
+  }
+}
+.section-alta table,
+.section-alta th,
+.section-alta td {
+  border-collapse: separate;
+}
+.section-alta table {
+  width: 100%;
+}
+.section-alta th, .section-alta td {
+  padding: 1em;
+  border: black solid 1px;
+}
+.section-alta th {
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  border: solid black;
+  background-color: purple;
+  color: white;
+  letter-spacing: 0.3em;
+}
+
+#drop-area {
+  border: 1px dashed black;
+  border-radius: 20px;
+  width: 100%;
+  line-height: 1.5em;
+  padding: 2em;
+  text-align: center;
+  display: block;
+  justify-content: center;
+}
+
+#foto {
+  display: none;
+}
+
+#gallery img {
+  vertical-align: middle;
+  width: 100px;
+  margin-top: 2em;
+}
+
+#drop-area.highlight {
+  border-color: purple;
+}
+
+.section-carrito {
+  padding: 5px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  overflow-y: auto;
+  display: none;
+  position: fixed;
+  background-color: black;
+  color: white;
+  border-radius: 1em;
+  z-index: 1;
+  top: 150px;
+  left: 150px;
+  right: 150px;
+  bottom: 150px;
+  box-shadow: 0.3em 0.3em 10em 0.3em black;
+}
+.section-carrito--visible {
+  display: block;
+}
+.section-carrito table, .section-carrito th, .section-carrito td {
+  border: 3px solid;
+  border-collapse: collapse;
+  color: white;
+  text-align: center;
+}
+.section-carrito table {
+  width: 90%;
+  margin: 0 auto;
+}
+.section-carrito th, .section-carrito td {
+  padding: 1em;
+}
+.section-carrito button {
+  border-bottom: solid black;
+  border-right: solid black;
+  background-color: #E4CBF5;
+  border-radius: 1em;
+  color: black;
+  margin: 1em;
+  padding: 0.5em;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+}
+.section-carrito button:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.section-carrito button button.btn__enviarCarrito {
+  float: left;
+  border-bottom: solid black;
+  border-right: solid black;
+  background-color: #E4CBF5;
+  border-radius: 1em;
+  color: black;
+  text-decoration: none;
+  letter-spacing: 0.3em;
+}
+.section-carrito button button.btn__enviarCarrito:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.form {
+  padding: 1em;
+  background-color: #e1c3f5;
+  border-radius: 5px;
+  width: 100%;
+}
+.form__header {
+  color: black;
+  text-align: center;
+  letter-spacing: 1em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.form .form__header::before {
+  content: "🦋🦋🦋";
+}
+.form .input-group {
+  margin: 0.5em 0 1.5em;
+  color: black;
+  text-align: center;
+  letter-spacing: 0.6em;
+  font-weight: 600;
+}
+.form .input-group input:not(input[type=checkbox]) {
+  padding: 0.5em 1em;
+  display: block;
+  width: 100%;
+  margin-top: 0.5em;
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+  border-radius: 5px;
+  text-align: center;
+}
+.form .input-group input:not(input[type=checkbox]):focus {
+  border-left: 0.5em solid black;
+  border-right: 0.5em solid black;
+  padding-left: 0.5em;
+  background-color: white;
+}
+.form .input-group--error label,
+.form .input-group--error input:not(input[type=checkbox]) {
+  color: black;
+}
+.form .input-group--error label:focus,
+.form .input-group--error input:not(input[type=checkbox]):focus {
+  border-color: black;
+}
+.form .input-group--error input:not(input[type=checkbox])::-moz-selection {
+  background-color: #E4CBF5;
+}
+.form .input-group--error input:not(input[type=checkbox])::selection {
+  background-color: #E4CBF5;
+}
+.form .input-group--error .error-detail {
+  background-color: #85008F;
+  color: white;
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+  border-bottom-left-radius: 0.2em;
+  border-bottom-right-radius: 0.2em;
+  letter-spacing: normal;
+}
+.form .input-group--error .error-detail:empty {
+  padding: 0;
+}
+.form .form-button {
+  display: flex;
+  justify-content: center;
+  margin: 1em;
+}
+.form .button {
+  border-bottom: solid black;
+  border-right: solid black;
+  background-color: #85008F;
+  color: #E4CBF5;
+  border-radius: 1em;
+  padding: 1em;
+  margin: 1em;
+  text-decoration: none;
+  letter-spacing: 0.3em;
+  gap: 1em;
+}
+.form .button:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.form .form-subtitle,
+.form .listado-productos {
+  text-align: center;
+  padding: 1em;
+}
+.form .form-subtitle {
+  letter-spacing: 0.2em;
+}
+@media (min-width: 426px) {
+  .form {
+    width: 90%;
+    margin: 1em auto;
+  }
+}
+@media (min-width: 768px) {
+  .form {
+    padding: 2em;
+    width: 90%;
+    margin: 2em auto;
+  }
+}
+@media (max-width: 1024px) {
+  .form .mediaQuery {
+    display: none;
+  }
+}
+@media (max-width: 426px) {
+  .form table {
+    display: none;
+  }
+}
+@media (max-width: 1024px) {
+  .form .mediaQuery {
+    display: none;
+  }
+}
+.form table,
+.form th,
+.form td {
+  border-collapse: separate;
+}
+.form table {
+  width: 100%;
+}
+.form th,
+.form td {
+  padding: 1em;
+  border: black solid 1px;
+}
+.form th {
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  border-top: solid black;
+  background-color: purple;
+  color: white;
+  letter-spacing: 0.3em;
+}
+
+.section-cards {
+  padding: 3em;
+}
+.section-cards__header {
+  text-align: center;
+  padding: 1em;
+  margin: 0.9em;
+  margin-top: -1em;
+  letter-spacing: 0.2em;
+}
+.section-cards__extra {
+  line-height: 2em;
+  text-align: center;
+  padding: 2em;
+  font-size: 12px;
+  margin-top: 2em;
+  border-top: dotted black;
+  border-bottom: dotted black;
+  margin-bottom: 1em;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1em;
+}
+
+@media (min-width: 11.2em) {
+  .cards-container {
+    gap: 2em;
+  }
+}
+.section {
+  margin: 1em;
+  padding: 1em;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.section__heading {
+  font-size: 1em;
+  text-align: center;
+  letter-spacing: 0.8em;
+  padding: 1em;
+  color: black;
+  border-radius: 0.9em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.section__heading:before {
+  content: "🦋🦋🦋";
+}
+
+.section__description {
+  font-size: 16px;
+  color: black;
+  font-weight: bolder;
+  background-color: #E4CBF5;
+  margin-bottom: 1em;
+  border-radius: 0.9em;
+  line-height: 3em;
+  padding: 0.5em;
+}
+
+.section__subtitle,
+.section__description {
+  text-align: center;
+  margin: 1.8em;
+}
+
+.section__description-link {
+  text-decoration: none;
+  color: black;
+  letter-spacing: 0.8em;
+}
+
+.section__description-link:hover {
+  color: #85008F;
+}
+
+li {
+  list-style-type: none;
+}
+
+/* Checkout Payment Section - Start */
+.container_payment {
+  display: block;
+}
+
+.payment-form {
+  padding-bottom: 10px;
+  margin-right: 15px;
+  margin-left: 15px;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.payment-form.dark {
+  background-color: #f6f6f6;
+}
+
+.payment-form .content {
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
+  background-color: white;
+}
+
+.payment-form .block-heading {
+  padding-top: 40px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.payment-form .block-heading p {
+  text-align: center;
+  max-width: 420px;
+  margin: auto;
+  color: RGBA(0, 0, 0, 0.45);
+}
+
+.payment-form .block-heading h1,
+.payment-form .block-heading h2,
+.payment-form .block-heading h3 {
+  margin-bottom: 1.2rem;
+  color: #009EE3;
+}
+
+.payment-form .form-payment {
+  border-top: 2px solid #C6E9FA;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
+  background-color: #ffffff;
+  padding: 0;
+  max-width: 600px;
+  margin: auto;
+}
+
+.payment-form .title {
+  font-size: 1.3em;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 0.8em;
+  font-weight: bold;
+  padding-bottom: 8px;
+}
+
+.payment-form .products {
+  background-color: #f7fbff;
+  padding: 25px;
+}
+
+.payment-form .products .item {
+  margin-bottom: 1em;
+}
+
+.payment-form .products .item-name {
+  font-weight: 500;
+  font-size: 0.9em;
+}
+
+.payment-form .products .item p {
+  margin-bottom: 0.2em;
+}
+
+.payment-form .products .price {
+  float: right;
+  font-weight: 500;
+  font-size: 0.9em;
+}
+
+.payment-form .products .total {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+  padding-top: 19px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.payment-form .payment-details {
+  padding: 25px 25px 15px;
+  height: 100%;
+}
+
+.payment-form .payment-details label {
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #8C8C8C;
+  text-transform: uppercase;
+}
+
+.payment-form button {
+  margin-top: 0.6em;
+  padding: 12px 0;
+  font-weight: 500;
+  background-color: #009EE3;
+  margin-bottom: 10px;
+}
+
+.payment-form .mercadopago-button {
+  width: 100%;
+  padding: 8px 0;
+}
+
+.payment-form a, .payment-form a:not([href]) {
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  color: #009ee3;
+  cursor: pointer;
+}
+
+.payment-form a:not([href]):hover {
+  color: #3483FA;
+  cursor: pointer;
+}/*# sourceMappingURL=main.css.map */

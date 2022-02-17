@@ -1,0 +1,51 @@
+.section{
+    margin:1em;
+    padding: 1em;
+    border-radius: 5px;
+    width: 100%;
+}
+.section__heading {
+    font-size: 1em;
+    text-align: center;
+    letter-spacing:0.8em;
+    padding: 1em;
+    color: black;
+    border-radius: 0.9em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.section__heading:before {
+    content: "🦋🦋🦋";
+}
+    
+.section__description {
+    font-size: 16px;
+    color: black;
+    font-weight: bolder;
+    background-color: #E4CBF5;
+    margin-bottom: 1em;
+    border-radius: 0.9em;
+    line-height: 3em;
+    padding: 0.5em;
+}
+
+.section__subtitle, 
+.section__description {
+    text-align: center;
+    margin: 1.8em;
+}
+
+.section__description-link {
+    text-decoration: none;
+    color: black;
+    letter-spacing: 0.8em;
+}
+
+.section__description-link:hover {
+    color: #85008F;
+}
+
+li{
+    list-style-type: none;
+}

@@ -1,0 +1,263 @@
+//Principal
+.main{
+    display:flex;
+    justify-content: space-around;
+    border-top: solid black;
+    border-bottom:solid black;
+    
+    &__screen{
+    flex-direction: row;
+    justify-content: center;
+    width:40%;
+    }
+}
+
+//Encabezado 
+
+.main-header{
+    display: flex;   
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    position: sticky;
+    border-bottom: dotted black;
+    border-top: dotted black;
+    background-image: url(../img/web/fondo-animado.gif);
+}
+
+// Menú
+
+#menu{
+    display: none;
+}
+
+#menu:checked + .nav-bar{
+    display: block; 
+}
+
+// Barra de navegación
+
+.nav-bar{
+    display:flex;
+    align-items: center;
+
+    &__nav-list{
+        display: flex;
+        margin-left: 2em;
+        list-style-type: none;
+    }
+    
+    &__nav-item{
+        text-align: center;
+        justify-content: center;
+        margin: 1em;        
+    }
+    
+    &__nav-item:hover{
+        text-decoration: underline;
+        transform:scale(1.1);
+    }
+
+    &__nav-link{
+        display: block;
+        background-color: #E4CBF5;
+        border-radius: .9em;
+        margin:1em;
+        color: black;
+        padding: 1em;
+        border-bottom: solid black;
+        border-right: solid black;
+        text-decoration: none;
+        letter-spacing: .3em;
+    }
+
+    &__nav-list{
+            flex-direction: row;
+            justify-content: center;
+        }
+    }
+
+//Barra de búsqueda
+
+.search-bar{
+    display: flex;
+    align-items: center;
+
+    &__logo-container{
+        display:flex;
+    }
+
+    &__form-container{
+        flex-basis: 100%;
+        margin-left:3em;
+    }
+
+    &__form-label{
+        height: 50%;
+    }
+
+    &__form-search{
+        border-top:none;
+        border-right: none;
+        border-left:none;
+        font-size: .9em;
+        letter-spacing: .3em;
+        border-radius: 5px;
+        padding: .5em;
+    }
+
+    &__form-search:hover{
+        cursor: text;
+    }
+
+    &__form-submit{
+        margin: .1em;
+        padding: 1em;
+        border: none;
+        background-color: transparent;
+    }    
+
+    &__form-submit{
+        cursor:help;
+    }
+
+    &__form-label,
+    &__form-search,
+    &__form-submit{
+        align-self: center;
+        text-align: left;
+    }
+
+    &__carrito-container{
+        margin-right: 2em;
+        margin-left:1em;
+        cursor: url('../../img/web/cursor.png'), auto;
+    }
+
+    &__carrito-container:hover{
+        transform: scale(1.2);
+    }
+}
+
+//Menú hamburguesa
+
+.menu-toggle{
+    display:none;
+    background-color:transparent;  
+    flex: 0 0 3em;
+    position:relative;
+    cursor:pointer; 
+}
+
+.menu-toggle__label{
+    display:block;
+    background-color: #000;
+    height: 100%;
+}
+
+.menu-toggle__top-bread,
+.menu-toggle__meat,
+.menu-toggle__bottom-bread{
+    display: block;
+    background-color: rebeccapurple;
+    height: .2em;
+    position: absolute;
+    left: .3em;
+    right: .3em;
+}
+
+.menu-toggle__top-bread{
+    top: .8em;
+}
+
+.menu-toggle__meat{
+    top:50%;
+    margin-top: -.1em;
+}
+
+.menu-toggle__bottom-bread{
+    bottom: .8em;
+}
+
+//Media queries
+
+//4K (fondo)
+
+@media (max-width:2560px){
+    .main{
+        background-size: contain;
+    }
+}
+
+//Laptop (carrito y barra de navegación)
+
+@media (max-width:1024px){
+    // .search-bar__carrito-container{
+    //     display:none;
+    // }
+
+    .search-bar__form-container{
+        display: none;
+    }
+    
+    .search-bar__logo-container{
+        display:none;
+    } 
+
+    .nav-bar{
+        align-self: center;
+    }
+}
+
+//Tablet (despliegue menú, menú hamburguesa, barra de navegación y búsqueda)
+
+@media (max-width:768px) and (min-width:375px){
+    .search-bar{
+        width: 100%;
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-right: 1em;
+    }
+
+    .search-bar__form-container{
+        display: none;
+    }
+
+    .menu-toggle{
+        display: block;
+    }
+
+    .nav-bar{
+        display: none;
+    }
+
+    .nav-bar__nav-list{
+        display: block;
+    }
+}
+
+@media (max-width:321px){
+    .search-bar{
+        width: 100%;
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    
+    .search-bar__form-container{
+        display: none;
+    }
+
+    .menu-toggle{
+        display: block;
+    }
+
+    .nav-bar{
+        display: none;
+    }
+
+    .nav-bar__nav-list{
+        display: block;
+    }
+}

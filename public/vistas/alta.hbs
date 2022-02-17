@@ -1,0 +1,48 @@
+{{!-- Motor de plantillas. 
+Pseudo HTML que interactúa de manera eficiente con lo inyectado en alta.js 
+Inyectamos la tabla como en HTML--}}
+{{#if productos.length}}
+    <table>
+        <tr>
+            {{!-- <th class="mediaQuery">ID</th> --}}
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th class="mediaQuery">Stock</th>
+            <th>Marca</th>
+            <th class="mediaQuery">Categoría</th>
+            <th class="mediaQuery">Detalles</th>
+            <th>Foto</th>
+            <th class="mediaQuery">Envío</th>
+            <th>Acción</th>
+        </tr>
+
+        {{#each productos}}
+        <tr>
+            {{!-- <td class="mediaQuery">{{id}}</td> --}}
+            <td>{{nombre}}</td>
+            <td>{{precio}}</td>
+            <td class="mediaQuery">{{stock}}</td>
+            <td>{{marca}}</td>
+            <td class="mediaQuery">{{categoria}}</td>
+            <td class="mediaQuery">{{detalles}}</td>
+            <td>
+                <img src="{{foto}}" width="100px" alt="{{nombre}}">
+            </td>
+            {{#if envio}}
+                <td class="mediaQuery">Si</td>
+            {{else}}
+                <td class="mediaQuery">No</td>
+            {{/if}}
+{{!-- Botón Actualizar//Borrar de la tabla de alta.js --}}
+            <td>
+                <button class="button" onclick="productosController.actualizarProducto({{id}})">Actualizar</button>
+                <button class="button" onclick="productosController.borrarProducto({{id}})">Borrar</button>
+            </td>
+
+        </tr>
+        {{/each}}
+
+    </table>
+{{else}}
+    <h3>No se encontraron productos</h3>
+{{/if}}

@@ -1,0 +1,23 @@
+footer{
+    color:white;
+    background-color: #85008F;
+    padding:1em;
+    text-align: center;
+    font-size: .8em;
+    width: 100%;
+    letter-spacing: .3em;
+} 
+
+.footer__link{
+        text-decoration: none;
+        color:white;
+
+    &:hover,
+    &:focus{
+        cursor: pointer;
+    }
+
+    &:visited{
+        color:pink
+    }
+}

@@ -1,0 +1,72 @@
+// Maquetado de cards
+
+.card{
+    cursor:pointer;
+    width: 18em;
+    height: 23em;
+    outline: none;
+    overflow: hidden;
+    flex-grow: 1;
+    box-shadow: 0 1px 5px rgb(0 0 0 / 20%), 0 0 3px rgb(0 0 0 / 40%);
+    transition: all 0.2s;
+    text-decoration: none;
+    border-radius: 1em;
+
+    &__article{
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+        transition: all 1.5s ease;
+        background-color:#E4CBF5;
+    }
+
+    &__article:hover{
+        transform: rotateY(180deg);
+    }
+
+    &__image{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        border-radius: 1em;
+        object-fit: cover;
+    }
+                
+    &__content{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        background-color: transparent;
+        color:black;
+        font-weight: bolder;
+        text-align: center;
+        transform: rotateY(180deg);
+        margin-top: .8em;
+        text-align: center;
+        line-height: 1.5em;
+        justify-content: justify;
+        padding: 1em;
+    }
+
+    &__content::before{
+        content:'🦋🦋🦋'
+    }
+
+
+    &-container{
+        height: 12em;
+    }
+
+    &__heading{
+        padding: .2em;
+        font-size: 2em;
+        color:black;
+        font-variant:small-caps;
+    }
+
+    &__description{
+        font-size: .8em;
+        }
+}

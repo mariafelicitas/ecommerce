@@ -1,0 +1,35 @@
+// Botón de formulario "alta"
+.form__button{
+    background-color: #E4CBF5;
+    border-radius: 1em;
+    align-items: center;
+    color: black;
+    padding: 1em;
+    text-decoration: none;
+    letter-spacing: .3em;
+}
+
+.form__submit{
+    padding: 1em;
+    align-self: center;
+    border-radius: .9em;
+    margin:1em;
+    margin-top:1.2em;
+    letter-spacing: .9em;
+}
+
+
+//media
+
+@media (max-width:769px){
+    .button{
+        display: flex;
+        margin-left: 18em;
+    }
+}
+
+@media (max-width: 426px) and (min-width:320px){
+    .button{
+        display:none;
+        }
+}
